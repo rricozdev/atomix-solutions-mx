@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+/* =========================
+   🎨 DESIGN TOKENS (BASE)
+========================= */
+
+:root {
+  /* 🔵 BRAND */
+  --brand-primary: #165e7a;
+  --brand-primary-light: #1f7a9a;
+  --brand-primary-dark: #0f4c63;
+
+  --brand-secondary: #6fbf8f; /* base */
+  --brand-secondary-light: #8fd4a8; /* + claro */
+  --brand-secondary-dark: #4fa373; /* + oscuro */
+
+  /* ⚪ NEUTRALS */
+  --neutral-0: #ffffff;
+  --neutral-50: #f8fafc;
+  --neutral-100: #f1f5f9;
+  --neutral-200: #e5e7eb;
+  --neutral-400: #9ca3af;
+  --neutral-600: #4b5563;
+  --neutral-900: #111827;
+}
+
+/* =========================
+   🧠 SEMANTIC TOKENS (USO REAL)
+========================= */
+
+:root {
+  /* BACKGROUNDS */
+  --bg-main: var(--neutral-0);
+  --bg-soft: var(--neutral-50);
+  --bg-section: var(--neutral-100);
+
+  /* TEXT */
+  --text-primary: var(--neutral-900);
+  --text-secondary: var(--neutral-600);
+  --text-muted: var(--neutral-400);
+
+  /* BORDER */
+  --border-default: var(--neutral-200);
+
+  /* 🔴 BUTTONS */
+  --btn-primary-bg: var(--brand-primary);
+  --btn-primary-hover: var(--brand-primary-dark);
+  --btn-primary-text: #ffffff;
+
+  --btn-secondary-bg: transparent;
+  --btn-secondary-border: var(--neutral-200);
+  --btn-secondary-text: var(--text-primary);
+
+  /* 🔗 LINKS */
+  --link-color: var(--brand-primary);
+  --link-hover: var(--brand-primary-dark);
+
+  /* 🟢 ACCENTS */
+  --accent: var(--brand-secondary);
+}
+
+/* =========================
+   🌍 BASE
+========================= */
+
+body {
+  background: var(--bg-main);
+  color: var(--text-primary);
+  font-family: system-ui, sans-serif;
+}
+
+/* =========================
+   🧩 COMPONENT SYSTEM
+========================= */
+
+/* 🔴 BOTÓN PRINCIPAL */
+.btn-primary {
+  background-color: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--btn-primary-hover);
+}
+
+/* ⚪ BOTÓN SECUNDARIO */
+.btn-secondary {
+  background-color: var(--btn-secondary-bg);
+  border: 1px solid var(--btn-secondary-border);
+  color: var(--btn-secondary-text);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background-color: var(--bg-soft);
+}
+
+/* 🔗 LINKS */
+a {
+  color: var(--link-color);
+  transition: 0.2s ease;
+}
+
+a:hover {
+  color: var(--link-hover);
+}
