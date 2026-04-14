@@ -51,6 +51,9 @@
   --btn-secondary-border: var(--neutral-200);
   --btn-secondary-text: var(--text-primary);
 
+  --btn-secondary-inverse-text: #ffffff;
+  --btn-secondary-inverse-border: rgba(255, 255, 255, 0.4);
+
   /* 🔗 LINKS */
   --link-color: var(--brand-primary);
   --link-hover: var(--brand-primary-dark);
@@ -99,6 +102,19 @@ body {
 
 .btn-secondary:hover {
   background-color: var(--bg-soft);
+}
+
+.btn-secondary-inverse {
+  background-color: var(--btn-secondary-bg);
+  border: 1px solid var(--btn-secondary-inverse-border);
+  color: var(--btn-secondary-inverse-text);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary-inverse:hover {
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 /* 🔗 LINKS */
