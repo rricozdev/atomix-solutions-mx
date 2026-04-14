@@ -29,21 +29,19 @@ export default function TrustCategories() {
   ];
 
   return (
-    <div className="flex-shrink-0">
-      {/* Label */}
+    <div className="min-w-0">
       <p className="text-xs font-semibold uppercase tracking-widest text-[var(--text-muted)] mb-3">
         Sectores que atendemos
       </p>
 
-      {/* Pills */}
-      <div className="flex flex-wrap gap-2.5">
+      {/* Mobile: scroll horizontal | Desktop: wrap */}
+      <div className="flex gap-2.5 overflow-x-auto scrollbar-hide md:flex-wrap md:overflow-visible">
         {categories.map((item, index) => (
           <div
             key={index}
-            className="flex items-center gap-2 px-4 py-2 rounded-full border text-sm font-medium text-[var(--text-secondary)] bg-[var(--bg-soft)]"
+            className="shrink-0 flex items-center gap-2 px-4 py-2 rounded-full border text-sm font-medium whitespace-nowrap text-[var(--text-secondary)] bg-[var(--bg-soft)]"
             style={{ borderColor: "var(--border-default)" }}
           >
-            {/* Punto de acento */}
             <span
               className="w-1.5 h-1.5 rounded-full flex-shrink-0"
               style={{ backgroundColor: "var(--accent)" }}

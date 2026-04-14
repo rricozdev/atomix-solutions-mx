@@ -40,9 +40,9 @@ export default function Trust() {
     <section className="w-full bg-[var(--bg-section)] py-16 md:py-24">
       <div className="max-w-7xl mx-auto px-6 md:px-8">
         {/* Fila superior: Título + Categorías en desktop */}
+
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-10 md:gap-16">
-          <TrustTitle />
-          <TrustCategories />
+          <TrustTitle /> <TrustCategories />{" "}
         </div>
 
         {/* Separador */}
