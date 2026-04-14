@@ -126,3 +126,12 @@ a {
 a:hover {
   color: var(--link-hover);
 }
+
+a.btn-primary {
+  color: var(--btn-primary-text);
+}
+
+a.btn-primary:hover {
+  background-color: var(--btn-primary-hover);
+  color: var(--btn-primary-text);
+}
