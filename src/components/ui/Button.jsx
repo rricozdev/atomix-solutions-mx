@@ -45,6 +45,7 @@ export default function Button({
   const variants = {
     primary: "btn-primary",
     secondary: "btn-secondary",
+    "secondary-inverse": "btn-secondary-inverse",
   };
 
   return (

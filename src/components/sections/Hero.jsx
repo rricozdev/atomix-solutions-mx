@@ -29,45 +29,51 @@ import Button from "@/components/ui/Button";
 
 export default function Hero() {
   return (
-    <section className="w-full bg-[var(--bg-soft)]">
-      <div className="max-w-7xl mx-auto px-4 py-16 md:py-24 grid gap-12 md:grid-cols-2 items-center">
-        {/* Texto */}
-        <div>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
+    <section className="relative w-full h-[70vh] min-h-[500px]">
+      {/* Background */}
+
+      {/* Mobile */}
+      <div className="absolute inset-0 md:hidden">
+        <Image
+          src="/images/background-hero-moviles.webp"
+          alt="Envases y atomizadores"
+          fill
+          className="object-cover"
+          priority
+        />
+      </div>
+
+      {/* Desktop */}
+      <div className="hidden md:block absolute inset-0">
+        <Image
+          src="/images/background-hero.webp"
+          alt="Envases y atomizadores"
+          fill
+          className="object-cover"
+          priority
+        />
+      </div>
+
+      {/* Overlay oscuro (mejora legibilidad) */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/20" />
+
+      {/* Contenido */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 h-full flex items-center">
+        <div className="max-w-xl">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight">
             Envases y atomizadores confiables para tu negocio
           </h1>
 
-          <p className="mt-6 text-base sm:text-lg text-[var(--text-secondary)]">
-            Ofrecemos productos de alta calidad con entregas rápidas y asesoría
-            personalizada para empresas.
+          <p className="mt-6 text-base sm:text-lg text-white/90">
+            Productos de alta calidad con entregas rápidas y asesoría
+            personalizada.
           </p>
 
-          {/* CTAs */}
           <div className="mt-8 flex flex-col sm:flex-row gap-4">
-            <Button fullWidth>Solicitar cotización</Button>
+            <Button>Solicitar cotización</Button>
 
-            <Button variant="secondary" fullWidth>
-              Ver catálogo
-            </Button>
+            <Button variant="secondary-inverse">Ver catálogo</Button>
           </div>
-
-          {/* Prueba social */}
-          <div className="mt-8 flex flex-wrap gap-6 text-sm text-[var(--text-secondary)]">
-            <span>+500 clientes</span>
-            <span>Envíos nacionales</span>
-            <span>Respuesta en 24h</span>
-          </div>
-        </div>
-
-        {/* Imagen */}
-        <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px]">
-          <Image
-            src="/images/background-hero.webp"
-            alt="Envases y atomizadores"
-            fill
-            className="object-cover rounded-2xl"
-            priority
-          />
         </div>
       </div>
     </section>
