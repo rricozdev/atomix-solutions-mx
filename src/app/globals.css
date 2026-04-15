@@ -139,3 +139,123 @@ a.btn-primary:hover {
   background-color: var(--btn-primary-hover);
   color: var(--btn-primary-text);
 }
+
+/* =========================
+   ATOMIX LOADER
+========================= */
+
+.atomix-loader {
+  width: 48px;
+  height: 48px;
+  position: relative;
+  animation: atomix-rotate 1.6s linear infinite;
+}
+
+.atomix-loader .sq {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 3px;
+  background: var(--brand-primary); /* 🔑 TOKEN */
+  animation: atomix-spread 1.6s ease-in-out infinite;
+}
+
+/* Posicionamiento */
+.atomix-loader .sq:nth-child(1) {
+  top: 0;
+  left: 0;
+  transform-origin: bottom right;
+  animation-name: atomix-spread-tl;
+}
+
+.atomix-loader .sq:nth-child(2) {
+  top: 0;
+  right: 0;
+  transform-origin: bottom left;
+  animation-name: atomix-spread-tr;
+}
+
+.atomix-loader .sq:nth-child(3) {
+  bottom: 0;
+  left: 0;
+  transform-origin: top right;
+  animation-name: atomix-spread-bl;
+}
+
+.atomix-loader .sq:nth-child(4) {
+  bottom: 0;
+  right: 0;
+  transform-origin: top left;
+  animation-name: atomix-spread-br;
+}
+
+/* Animaciones */
+@keyframes atomix-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes atomix-spread-tl {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  25%,
+  50% {
+    transform: translate(-6px, -6px);
+  }
+  75% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes atomix-spread-tr {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  25%,
+  50% {
+    transform: translate(6px, -6px);
+  }
+  75% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes atomix-spread-bl {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  25%,
+  50% {
+    transform: translate(-6px, 6px);
+  }
+  75% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes atomix-spread-br {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  25%,
+  50% {
+    transform: translate(6px, 6px);
+  }
+  75% {
+    transform: translate(0, 0);
+  }
+}
+
+.atomix-loader .sq:nth-child(2),
+.atomix-loader .sq:nth-child(3) {
+  background: var(--brand-secondary);
+}
