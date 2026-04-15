@@ -6,9 +6,13 @@
 
 :root {
   /* 🔵 BRAND */
-  --brand-primary: #165e7a;
+  /* --brand-primary: #165e7a;
   --brand-primary-light: #1f7a9a;
-  --brand-primary-dark: #0f4c63;
+  --brand-primary-dark: #0f4c63; */
+
+  --brand-primary: #2f7d5a;
+  --brand-primary-light: #4caf7a;
+  --brand-primary-dark: #25694c;
 
   --brand-secondary: #6fbf8f; /* base */
   --brand-secondary-light: #8fd4a8; /* + claro */
