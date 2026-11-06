@@ -3,7 +3,11 @@ import Link from "next/link";
 import { Mail, MessageCircle } from "lucide-react";
 import { company, fullAddress, mapsDirectionsUrl, navLinks, whatsappUrl } from "../../data/site";
 
-export default function SiteFooter() {
+export default async function SiteFooter() {
+  "use cache";
+
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className="site-footer">
       <div className="page-shell footer-main">
@@ -45,7 +49,7 @@ export default function SiteFooter() {
         </div>
       </div>
       <div className="page-shell footer-bottom">
-        <p>© Atomix Solutions. Todos los derechos reservados.</p>
+        <p>© {currentYear} Atomix Solutions. Todos los derechos reservados.</p>
       </div>
     </footer>
   );

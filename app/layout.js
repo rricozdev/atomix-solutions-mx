@@ -66,6 +66,11 @@ export const metadata = {
   alternates: homeMetadata.alternates,
   applicationName: "Atomix Solutions",
   publisher: "Atomix Solutions",
+  authors: [{ name: "rricozdev", url: "https://github.com/rricozdev" }],
+  creator: "rricozdev",
+  other: {
+    copyright: "© Atomix Solutions. Todos los derechos reservados.",
+  },
   robots: {
     index: true,
     follow: true,
