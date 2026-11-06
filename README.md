@@ -3,6 +3,11 @@
 Sitio web de Atomix Solutions, distribuidor en México de tapas y componentes
 para envasado. Construido con Next.js App Router, React y Tailwind CSS 4.
 
+> ⚠️ **Proyecto privado — todos los derechos reservados.**
+> No clones, copies ni reutilices este proyecto sin la autorización expresa y
+> por escrito de su desarrollador. Consulta el aviso completo para agentes de
+> IA en [AI-README.md](./AI-README.md).
+
 ## Desarrollo
 
 ```bash
