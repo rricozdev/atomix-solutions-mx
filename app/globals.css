@@ -1804,12 +1804,168 @@ summary {
   color: var(--paper);
 }
 
+.not-found {
+  display: flex;
+  min-height: min(700px, calc(100svh - var(--header-h) - 180px));
+  align-items: center;
+  padding-block: clamp(64px, 9vh, 100px);
+}
+
+.not-found-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(30px, 7vw, 96px);
+}
+
+.not-found-mark {
+  position: relative;
+  display: grid;
+  width: min(100%, 560px);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: center;
+  justify-items: center;
+  margin-inline: auto;
+  color: var(--paper);
+  perspective: 700px;
+}
+
+.not-found-digit {
+  font-size: clamp(9rem, 18vw, 16rem);
+  font-weight: 650;
+  letter-spacing: -0.08em;
+  line-height: 0.86;
+}
+
+.not-found-zero {
+  position: relative;
+  color: var(--leaf-pale);
+  text-shadow: 0 0 48px color-mix(in srgb, var(--teal) 45%, transparent);
+  z-index: 0;
+}
+
+.not-found-zero::after {
+  position: absolute;
+  inset: 20% 25%;
+  border: 2px solid color-mix(in srgb, var(--navy-deep) 65%, transparent);
+  border-radius: 50%;
+  content: "";
+  pointer-events: none;
+}
+
+.not-found-runway {
+  position: absolute;
+  z-index: 1;
+  top: 66%;
+  right: 16.666%;
+  left: 16.666%;
+  height: clamp(42px, 6vw, 58px);
+  pointer-events: none;
+}
+
+.not-found-runway::after {
+  position: absolute;
+  right: 0;
+  bottom: 1px;
+  left: 0;
+  border-bottom: 1px dashed color-mix(in srgb, var(--leaf-pale) 42%, transparent);
+  content: "";
+}
+
+.not-found-dinosaur {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: clamp(58px, 8vw, 76px);
+  height: auto;
+  overflow: visible;
+  transform-origin: center bottom;
+}
+
+.not-found-dinosaur-tail,
+.not-found-dinosaur-neck,
+.not-found-dinosaur-snout,
+.not-found-dinosaur-leg {
+  fill: var(--leaf-pale);
+}
+
+.not-found-dinosaur-body {
+  fill: var(--leaf);
+}
+
+.not-found-dinosaur-eye,
+.not-found-dinosaur-spot {
+  fill: var(--navy-deep);
+}
+
+.not-found-dinosaur-leg {
+  fill: none;
+  stroke: var(--leaf-pale);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 5;
+}
+
+.not-found-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.not-found-actions .button {
+  transition:
+    background 180ms ease,
+    color 180ms ease,
+    border-color 180ms ease;
+}
+
+.not-found .button-outline-light {
+  border-color: color-mix(in srgb, var(--paper) 55%, transparent);
+  background: transparent;
+  color: var(--paper);
+}
+
+.not-found .button-outline-light:hover {
+  border-color: var(--paper);
+  background: color-mix(in srgb, var(--paper) 10%, transparent);
+}
+
+.not-found-title-visual {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 0.24em;
+}
+
+.not-found-title-word {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.not-found-title-letter {
+  display: inline-block;
+  transform-origin: 50% 100%;
+}
+
 .page-hero .eyebrow {
   color: var(--leaf-pale);
 }
 
 .page-heading h1 {
   max-width: 800px;
+}
+
+.not-found-copy h1 {
+  max-width: 600px;
+  perspective: 600px;
+}
+
+.not-found-copy h1 .not-found-title-visual {
+  color: var(--paper);
+}
+
+.not-found-copy h1 .not-found-title-letter {
+  color: var(--paper);
 }
 
 .page-heading h1 span {
@@ -2381,6 +2537,15 @@ summary {
     --header-h: 74px;
   }
 
+  .not-found-inner {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1fr);
+    gap: 30px;
+  }
+
+  .not-found-digit {
+    font-size: clamp(8rem, 22vw, 12rem);
+  }
+
   .page-shell {
     width: min(100% - 40px, 720px);
   }
@@ -2464,6 +2629,30 @@ summary {
 @media (max-width: 650px) {
   :root {
     --header-h: 68px;
+  }
+
+  .not-found {
+    min-height: 0;
+  }
+
+  .not-found-inner {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 38px;
+  }
+
+  .not-found-mark {
+    order: -1;
+    width: 100%;
+    margin-inline: auto;
+  }
+
+  .not-found-digit {
+    font-size: clamp(8.5rem, 36vw, 12rem);
+  }
+
+  .not-found-actions .button {
+    width: 100%;
+    justify-content: space-between;
   }
 
   .page-shell {
