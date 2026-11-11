@@ -17,7 +17,11 @@ import ProductCard from "./components/product-card";
 const benefits = [
   [Truck, "Envíos a todo México", "Tu operación llega más lejos."],
   [PackageCheck, "Stock disponible", "Productos listos para envío inmediato."],
-  [MessageCircle, "Atención personalizada", "Te ayudamos a encontrar la medida ideal."],
+  [
+    MessageCircle,
+    "Atención personalizada",
+    "Te ayudamos a encontrar la medida ideal.",
+  ],
   [ArrowRight, "Precios competitivos", "Opciones que cuidan tu operación."],
 ];
 
@@ -69,26 +73,41 @@ export default function Home() {
               </p>
               <div className="hero-actions">
                 <Link className={primaryActionClass} href="/productos">
-                  Explorar productos <ArrowUpRight aria-hidden="true" size={17} />
+                  Explorar productos{" "}
+                  <ArrowUpRight aria-hidden="true" size={17} />
                 </Link>
                 <a
                   className={secondaryActionClass}
-                  href={whatsappUrl("¡Hola! Me interesa conocer sus productos.")}
+                  href={whatsappUrl(
+                    "¡Hola! Me interesa conocer sus productos.",
+                  )}
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Cotizar por WhatsApp <ArrowUpRight aria-hidden="true" size={17} />
+                  Cotizar por WhatsApp{" "}
+                  <ArrowUpRight aria-hidden="true" size={17} />
                 </a>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="trust-strip" aria-label="Ventajas de Atomix Solutions">
+        <section
+          className="trust-strip"
+          aria-label="Ventajas de Atomix Solutions"
+        >
           <div className="page-shell trust-inner">
-            <p><PackageCheck aria-hidden="true" size={17} /> Distribución especializada</p>
-            <p><Truck aria-hidden="true" size={17} /> Envíos a todo México</p>
-            <p><MessageCircle aria-hidden="true" size={17} /> Atención de persona a persona</p>
+            <p>
+              <PackageCheck aria-hidden="true" size={17} /> Distribución
+              especializada
+            </p>
+            <p>
+              <Truck aria-hidden="true" size={17} /> Envíos a todo México
+            </p>
+            <p>
+              <MessageCircle aria-hidden="true" size={17} /> Atención de persona
+              a persona
+            </p>
           </div>
         </section>
 
@@ -97,7 +116,11 @@ export default function Home() {
             <div className="section-heading section-heading-split">
               <div>
                 <p className="eyebrow">Catálogo / 05 familias</p>
-                <h2>Un catálogo pensado<br />para <span>cada producto.</span></h2>
+                <h2>
+                  Un catálogo pensado
+                  <br />
+                  para <span>cada producto.</span>
+                </h2>
               </div>
               <p className="section-intro">
                 Diferentes cierres, medidas y mecanismos para acompañar tus
@@ -133,7 +156,8 @@ export default function Home() {
             </div>
             <div className="section-footer-link">
               <Link className="text-link" href="/productos">
-                Ver catálogo completo <ArrowRight aria-hidden="true" size={16} />
+                Ver catálogo completo{" "}
+                <ArrowRight aria-hidden="true" size={16} />
               </Link>
             </div>
           </div>
@@ -144,12 +168,20 @@ export default function Home() {
             <div className="section-heading section-heading-split">
               <div>
                 <p className="eyebrow">Referencias / Selección de temporada</p>
-                <h2>Cierres hechos para<br /><span>el uso diario.</span></h2>
+                <h2>
+                  Cierres hechos para
+                  <br />
+                  <span>el uso diario.</span>
+                </h2>
               </div>
               <div className="featured-aside">
-                <p>Conoce algunos de los productos que nuestros clientes eligen para sus proyectos.</p>
+                <p>
+                  Conoce algunos de los productos que nuestros clientes eligen
+                  para sus proyectos.
+                </p>
                 <Link className="text-link" href="/productos">
-                  Ver todos los productos <ArrowRight aria-hidden="true" size={16} />
+                  Ver todos los productos{" "}
+                  <ArrowRight aria-hidden="true" size={16} />
                 </Link>
               </div>
             </div>
@@ -187,14 +219,15 @@ export default function Home() {
                   todo México.
                 </p>
                 <Link className="text-link" href="/nosotros">
-                  Conoce más sobre nosotros <ArrowRight aria-hidden="true" size={16} />
+                  Conoce más sobre nosotros{" "}
+                  <ArrowRight aria-hidden="true" size={16} />
                 </Link>
               </div>
             </div>
             <figure className="about-image">
               <div className="about-image-frame">
                 <Image
-                  src="/images/ui/img-nosotros-1-20261105.jpeg"
+                  src="/images/ui/img-nosotros-1-20261105.webp"
                   alt="Selección de cinco tapas y sistemas dosificadores Atomix"
                   fill
                   sizes="(max-width: 800px) 100vw, 1200px"
@@ -211,9 +244,12 @@ export default function Home() {
           <div className="page-shell benefits-layout">
             <div className="benefits-heading">
               <p className="eyebrow eyebrow-light">Distribución / México</p>
-              <h2>Lo que tu operación necesita, <span>sin complicaciones.</span></h2>
+              <h2>
+                Lo que tu operación necesita, <span>sin complicaciones.</span>
+              </h2>
               <a className={primaryActionClass} href={whatsappUrl()}>
-                Hablemos de tu proyecto <ArrowUpRight aria-hidden="true" size={17} />
+                Hablemos de tu proyecto{" "}
+                <ArrowUpRight aria-hidden="true" size={17} />
               </a>
             </div>
             <div className="benefits-list">
@@ -234,7 +270,9 @@ export default function Home() {
           <div className="page-shell contact-layout">
             <div className="contact-copy">
               <p className="eyebrow">Estamos para ayudarte</p>
-              <h2>¿Buscas la pieza correcta para tu <span>producto?</span></h2>
+              <h2>
+                ¿Buscas la pieza correcta para tu <span>producto?</span>
+              </h2>
               <p>
                 Cuéntanos qué necesitas. Nuestro equipo te orientará sobre
                 opciones, medidas y disponibilidad.
@@ -246,7 +284,9 @@ export default function Home() {
                 </a>
                 <a href={mapsDirectionsUrl} target="_blank" rel="noreferrer">
                   <span className="detail-label">Visítanos</span>
-                  <strong>{company.address.city}, {company.address.state}</strong>
+                  <strong>
+                    {company.address.city}, {company.address.state}
+                  </strong>
                 </a>
               </div>
             </div>
@@ -258,15 +298,27 @@ export default function Home() {
           <div className="page-shell location-inner">
             <div>
               <p className="eyebrow eyebrow-light">Encuéntranos</p>
-              <h2>Desde Naucalpan,<br />para todo México.</h2>
+              <h2>
+                Desde Naucalpan,
+                <br />
+                para todo México.
+              </h2>
             </div>
             <p className="location-address">
-              {company.address.street}<br />
-              {company.address.neighborhood}, C.P. {company.address.postalCode}<br />
+              {company.address.street}
+              <br />
+              {company.address.neighborhood}, C.P. {company.address.postalCode}
+              <br />
               {company.address.city}, {company.address.state}
             </p>
-            <a className={secondaryActionClass} href={mapsDirectionsUrl} target="_blank" rel="noreferrer">
-              <MapPin aria-hidden="true" size={17} /> Cómo llegar <ArrowUpRight aria-hidden="true" size={17} />
+            <a
+              className={secondaryActionClass}
+              href={mapsDirectionsUrl}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <MapPin aria-hidden="true" size={17} /> Cómo llegar{" "}
+              <ArrowUpRight aria-hidden="true" size={17} />
             </a>
           </div>
         </section>
