@@ -337,7 +337,7 @@ export const products = rawProducts.map(
       name,
       category,
       description,
-      image: `/images/productos/${filename.replace(/\.jpg$/, ".jpeg")}`,
+      image: `/images/productos/${filename.replace(/\.jpg$/, ".webp")}`,
       size,
       thread,
       neck: thread ? `${size.replace(" mm", "")}/${thread}` : size,
