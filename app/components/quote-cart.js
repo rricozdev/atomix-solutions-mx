@@ -159,6 +159,14 @@ export default function QuoteCart() {
     return () => timeline?.kill();
   }, [isOpen]);
 
+  useEffect(() => {
+    const lenis = window.lenis;
+    if (!isOpen || !lenis) return undefined;
+
+    lenis.stop();
+    return () => lenis.start();
+  }, [isOpen]);
+
   return (
     <>
       <dialog
@@ -195,7 +203,7 @@ export default function QuoteCart() {
 
           {items.length > 0 ? (
             <>
-              <div className="quote-cart-items">
+              <div className="quote-cart-items" data-lenis-prevent>
                 {items.map(({ product, quantity }) => (
                   <article className="quote-cart-item" key={product.id}>
                     <div className="quote-cart-image">

@@ -30,8 +30,10 @@
 
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import "lenis/dist/lenis.css";
 import SiteFooter from "./components/site-footer";
 import SiteHeader from "./components/site-header";
+import SmoothScroll from "./components/smooth-scroll";
 import WhatsAppFloat from "./components/whatsapp-float";
 import GsapAnimations from "./components/gsap-animations";
 import QuoteCart from "./components/quote-cart";
@@ -90,11 +92,11 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="es-MX"
-      data-scroll-behavior="smooth"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full">
         <QuoteCartProvider>
+          <SmoothScroll />
           <a className="skip-link" href="#main">Saltar al contenido</a>
           <SiteHeader />
           <GsapAnimations>

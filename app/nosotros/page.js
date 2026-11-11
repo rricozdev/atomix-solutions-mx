@@ -24,9 +24,21 @@ export const metadata = createPageMetadata({
 });
 
 const values = [
-  [Handshake, "Cercanía", "Escuchamos cada proyecto y te orientamos para encontrar la mejor alternativa."],
-  [PackageCheck, "Disponibilidad", "Mantenemos variedad de productos para responder con agilidad."],
-  [ShieldCheck, "Compromiso", "Cuidamos cada detalle para ser un socio confiable de tu operación."],
+  [
+    Handshake,
+    "Cercanía",
+    "Escuchamos cada proyecto y te orientamos para encontrar la mejor alternativa.",
+  ],
+  [
+    PackageCheck,
+    "Disponibilidad",
+    "Mantenemos variedad de productos para responder con agilidad.",
+  ],
+  [
+    ShieldCheck,
+    "Compromiso",
+    "Cuidamos cada detalle para ser un socio confiable de tu operación.",
+  ],
 ];
 
 const mapsEmbedUrl =
@@ -38,7 +50,9 @@ export default function AboutPage() {
       <section className="page-hero">
         <div className="page-shell page-heading">
           <p className="eyebrow">Sobre Atomix Solutions</p>
-          <h1>Un socio para cada <span>etapa de tu producto.</span></h1>
+          <h1>
+            Un socio para cada <span>etapa de tu producto.</span>
+          </h1>
           <p>
             Acompañamos a marcas y negocios con soluciones confiables para el
             envasado, desde la selección del componente hasta su entrega.
@@ -64,7 +78,11 @@ export default function AboutPage() {
           <div className="about-values">
             {values.map(([Icon, title, description]) => (
               <Card className="about-value" key={title} role="article">
-                <Icon className="about-value-icon" aria-hidden="true" size={20} />
+                <Icon
+                  className="about-value-icon"
+                  aria-hidden="true"
+                  size={20}
+                />
                 <h3>{title}</h3>
                 <p>{description}</p>
               </Card>
@@ -76,7 +94,7 @@ export default function AboutPage() {
         <figure className="about-image">
           <div className="about-image-frame">
             <Image
-              src="/images/ui/img-nosotros-1-20261105.jpeg"
+              src="/images/ui/img-nosotros-1-20261105.webp"
               alt="Selección de cinco productos de envasado distribuidos por Atomix Solutions"
               fill
               sizes="(max-width: 800px) 100vw, 1200px"
@@ -112,7 +130,8 @@ export default function AboutPage() {
                 target="_blank"
                 rel="noreferrer"
               >
-                Abrir en Google Maps <ArrowUpRight aria-hidden="true" size={14} />
+                Abrir en Google Maps{" "}
+                <ArrowUpRight aria-hidden="true" size={14} />
               </Link>
             </div>
           </div>
