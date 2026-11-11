@@ -33,9 +33,15 @@ export default function ProductCatalog({ categories, products }) {
 
   function changePage(nextPage) {
     setPage(nextPage);
-    document
-      .querySelector(".catalog-browser")
-      ?.scrollIntoView({ behavior: "smooth", block: "start" });
+    const browser = document.querySelector(".catalog-browser");
+    if (!browser) return;
+
+    if (window.lenis) {
+      window.lenis.scrollTo(browser);
+      return;
+    }
+
+    browser.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
   return (
