@@ -10,6 +10,11 @@ import {
   useState,
 } from "react";
 import { getProductById } from "../../data/catalog";
+import {
+  MAX_QUOTE_QUANTITY,
+  quoteCartItemSchema,
+  quoteQuantitySchema,
+} from "../../lib/validation";
 
 const STORAGE_KEY = "atomix-quote-cart";
 const QuoteCartContext = createContext(null);
@@ -31,12 +36,17 @@ export function QuoteCartProvider({ children }) {
             throw new TypeError("El contenido guardado del carrito no es válido.");
           }
 
-          const validItems = parsed.filter(
-            (item) =>
-              getProductById(item?.id) &&
-              Number.isSafeInteger(item.quantity) &&
-              item.quantity > 0,
-          );
+          const validItems = parsed.flatMap((item) => {
+            const result = quoteCartItemSchema.safeParse(item);
+            return result.success && getProductById(result.data.id)
+              ? [result.data]
+              : [];
+          });
+          if (validItems.length !== parsed.length) {
+            console.warn(
+              "Se descartaron artículos inválidos del carrito de cotización.",
+            );
+          }
           setStoredItems(validItems);
         }
       } catch (error) {
@@ -79,12 +89,17 @@ export function QuoteCartProvider({ children }) {
   }, []);
   const addProduct = useCallback(
     (product) => {
+      if (!getProductById(product?.id)) return;
+
       setStoredItems((current) => {
         const existing = current.find((item) => item.id === product.id);
         if (existing) {
           return current.map((item) =>
             item.id === product.id
-              ? { ...item, quantity: item.quantity + 1 }
+              ? {
+                  ...item,
+                  quantity: Math.min(item.quantity + 1, MAX_QUOTE_QUANTITY),
+                }
               : item,
           );
         }
@@ -95,10 +110,12 @@ export function QuoteCartProvider({ children }) {
     [notify],
   );
   const setQuantity = useCallback((id, quantity) => {
-    if (!Number.isSafeInteger(quantity) || quantity < 1) return;
+    const result = quoteQuantitySchema.safeParse(quantity);
+    if (!result.success || !getProductById(id)) return;
+
     setStoredItems((current) =>
       current.map((item) =>
-        item.id === id ? { ...item, quantity } : item,
+        item.id === id ? { ...item, quantity: result.data } : item,
       ),
     );
   }, []);

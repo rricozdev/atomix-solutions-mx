@@ -8,7 +8,7 @@ export const company = {
     "Distribuidor de tapas y complementos para botellas en México: triggers, tapas Disktop y FlipTop, bombas dosificadoras y atomizadores de botón. Stock disponible y envíos a todo el país.",
   phoneDisplay: "+52 55 4354 2352",
   phoneE164: "+525543542352",
-  whatsappNumber: "573115201344",
+  whatsappNumber: "525543542352",
   address: {
     street: "Parque de Orizaba #2",
     neighborhood: "El Parque",
