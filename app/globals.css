@@ -1647,6 +1647,18 @@ summary {
   outline: 3px solid var(--teal);
 }
 
+.contact-form [aria-invalid="true"] {
+  border-color: var(--danger);
+}
+
+.field-error {
+  margin: -2px 0 0;
+  color: var(--danger);
+  font-size: 0.7rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
 .form-submit {
   width: fit-content;
   margin-top: 3px;

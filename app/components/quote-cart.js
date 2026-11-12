@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import gsap from "gsap";
 import { whatsappUrl } from "../../data/site";
+import { MAX_QUOTE_QUANTITY } from "../../lib/validation";
 import { useQuoteCart } from "./quote-cart-context";
 
 function getQuoteMessage(items) {
@@ -234,6 +235,7 @@ export default function QuoteCart() {
                           <button
                             type="button"
                             aria-label={`Aumentar cantidad de ${product.name}`}
+                            disabled={quantity >= MAX_QUOTE_QUANTITY}
                             onClick={() => setQuantity(product.id, quantity + 1)}
                           >
                             <Plus aria-hidden="true" size={14} />
