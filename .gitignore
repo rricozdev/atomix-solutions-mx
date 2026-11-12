@@ -42,3 +42,4 @@ next-env.d.ts
 
 # archivos de trabajo local
 /prompt.md
+/graphify-out 
