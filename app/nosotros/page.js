@@ -12,6 +12,7 @@ import {
   mapsDirectionsUrl,
   whatsappUrl,
 } from "../../data/site";
+import { AboutLocationMap } from "../../components/about-location-map";
 import { buttonVariants } from "../../components/ui/button";
 import { Card } from "../../components/ui/card";
 import { createPageMetadata } from "../../data/seo";
@@ -135,15 +136,10 @@ export default function AboutPage() {
               </Link>
             </div>
           </div>
-          <div className="about-location-map">
-            <iframe
-              src={mapsEmbedUrl}
-              title="Ubicación de Atomix Solutions en Naucalpan de Juárez"
-              loading="lazy"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
-            />
-          </div>
+          <AboutLocationMap
+            src={mapsEmbedUrl}
+            title="Ubicación de Atomix Solutions en Naucalpan de Juárez"
+          />
         </div>
       </section>
     </main>
