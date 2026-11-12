@@ -2470,6 +2470,7 @@ summary {
 }
 
 .about-location-map {
+  position: relative;
   width: 100%;
   height: 290px;
   overflow: hidden;
@@ -2478,10 +2479,81 @@ summary {
 }
 
 .about-location-map iframe {
+  position: relative;
+  z-index: 1;
   display: block;
   width: 100%;
   height: 100%;
   border: 0;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.about-location-map.is-loaded iframe {
+  opacity: 1;
+}
+
+.about-location-map-loading {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 14px;
+  background-color: var(--paper);
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 44px 44px;
+  background-position: center;
+  opacity: 1;
+  transition:
+    opacity 0.4s ease,
+    visibility 0.4s ease;
+}
+
+.about-location-map-loading::before {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    var(--paper) 0%,
+    color-mix(in srgb, var(--paper) 72%, transparent) 45%,
+    transparent 78%
+  );
+  content: "";
+}
+
+.about-location-map.is-loaded .about-location-map-loading {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.about-location-map-spinner {
+  position: relative;
+  width: 34px;
+  height: 34px;
+  border: 2px solid var(--line);
+  border-top-color: var(--teal);
+  border-radius: 999px;
+  animation: about-location-map-spin 0.8s linear infinite;
+}
+
+.about-location-map-loading-label {
+  position: relative;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 650;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+@keyframes about-location-map-spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .plain-section h2 {
