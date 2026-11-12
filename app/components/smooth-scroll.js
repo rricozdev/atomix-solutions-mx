@@ -8,26 +8,47 @@ import Lenis from "lenis";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const lenisOptions = {
+const baseOptions = {
   lerp: 0.07,
   smoothWheel: true,
   wheelMultiplier: 0.9,
-  syncTouch: true,
-  syncTouchLerp: 0.075,
-  touchMultiplier: 1.2,
-  touchInertiaExponent: 1.4,
   anchors: true,
   stopInertiaOnNavigate: true,
   autoRaf: false,
   respectReducedMotion: true,
 };
 
+// En pantallas táctiles dejamos que el sistema maneje la inercia nativa.
+// Suavizar el touch con JS obliga a recalcular en cada frame y se siente
+// pesado en móviles de gama baja/media.
+function getLenisOptions() {
+  const isCoarsePointer = window.matchMedia(
+    "(hover: none) and (pointer: coarse)",
+  ).matches;
+
+  if (!isCoarsePointer) {
+    return {
+      ...baseOptions,
+      syncTouch: true,
+      syncTouchLerp: 0.075,
+      touchMultiplier: 1.2,
+      touchInertiaExponent: 1.4,
+    };
+  }
+
+  return {
+    ...baseOptions,
+    syncTouch: false,
+    smoothWheel: false,
+  };
+}
+
 export default function SmoothScroll() {
   const lenisRef = useRef(null);
   const pathname = usePathname();
 
   useEffect(() => {
-    const lenis = new Lenis(lenisOptions);
+    const lenis = new Lenis(getLenisOptions());
     lenisRef.current = lenis;
     window.lenis = lenis;
 
