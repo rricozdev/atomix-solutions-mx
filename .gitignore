@@ -43,3 +43,6 @@ next-env.d.ts
 # archivos de trabajo local
 /prompt.md
 /graphify-out 
+
+# Local AI agents and skills
+/.agents/
